@@ -1,0 +1,28 @@
+.coinContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border: solid;
+  margin: 2rem;
+
+
+  .coinLogo {
+    height: 3rem;
+  }
+}
+
+.coinUl {
+  margin: 0;
+  padding: 0;
+}
+
+.backIcon {
+  height: 3rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.main {
+  padding: 1rem;
+}

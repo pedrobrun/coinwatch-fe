@@ -54,6 +54,16 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem
+}
+
+.description:hover {
+  border-radius: 2rem;
+  background-color: #d8dfe7;
+  cursor: pointer;
 }
 
 .code {
@@ -106,6 +116,11 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.icon {
+  height: 4rem;
+  padding-left: 0.5rem;
 }
 
 @media (max-width: 600px) {
