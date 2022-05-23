@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import ConnectedWallet from '../components/connectedWallet';
+import ConnectedWallet from '../components/ConnectedWallet';
 import ConnectWalletButton from '../components/ConnectWalletButton';
 import styles from '../styles/Home.module.css';
 import useMetaMask from '../useContext/useMetaMask';

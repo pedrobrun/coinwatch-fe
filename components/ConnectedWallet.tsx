@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './ConnectedWallet.module.scss';
 
 interface Props {
   address?: string;
 }
 
-function connectedWallet({ address }: Props): JSX.Element {
+function ConnectedWallet({ address }: Props): JSX.Element {
+  // const [walletAddress, setWalletAddress] = setState<string | null>();
+  const [walletAddress, setWalletAddress] = useState<string | null>();
+
+  useEffect(() => {
+    setWalletAddress(address);
+  }, [address]);
+
   let str;
 
   if (address) {
@@ -25,4 +32,4 @@ function connectedWallet({ address }: Props): JSX.Element {
   );
 }
 
-export default connectedWallet;
+export default ConnectedWallet;
