@@ -6,7 +6,6 @@ interface Props {
 }
 
 function ConnectedWallet({ address }: Props): JSX.Element {
-  // const [walletAddress, setWalletAddress] = setState<string | null>();
   const [walletAddress, setWalletAddress] = useState<string | null>();
 
   useEffect(() => {
