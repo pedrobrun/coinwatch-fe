@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import styles from '../styles/Register.module.scss';
@@ -46,6 +47,8 @@ function Register() {
         draggable: true,
         progress: undefined,
       });
+
+      Router.push('Login');
     }
   };
 
