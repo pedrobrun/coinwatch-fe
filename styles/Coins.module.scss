@@ -12,6 +12,19 @@
   }
 }
 
+.firstRow {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.myCoinsButton {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .addIcon {
   height: 3rem;
   cursor: pointer;
@@ -24,7 +37,6 @@
 
 .backIcon {
   height: 3rem;
-  margin-left: 2rem;
   cursor: pointer;
 }
 

@@ -62,12 +62,23 @@ function Coins({
   return (
     <JwtCookieProvider>
       <div className={styles.main}>
-        <img
-          className={styles.backIcon}
-          src="back.png"
-          alt=""
-          onClick={handleBack}
-        ></img>
+        <div className={styles.firstRow}>
+          <img
+            className={styles.backIcon}
+            src="back.png"
+            alt=""
+            onClick={handleBack}
+          ></img>
+
+          <div
+            className={styles.myCoinsButton}
+            onClick={() => {
+              router.push('MyCoins');
+            }}
+          >
+            My Coins
+          </div>
+        </div>
 
         {coins ? (
           (coins as any).map((c: any) => {
