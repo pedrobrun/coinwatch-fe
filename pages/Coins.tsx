@@ -3,6 +3,7 @@ import { InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
+import BackIcon from '../components/BackIcon';
 import JwtCookieProvider from '../providers/JwtCookieProvider';
 import styles from '../styles/Coins.module.scss';
 import useJwtCookie from '../useContext/useJwtCookie';
@@ -63,12 +64,7 @@ function Coins({
     <JwtCookieProvider>
       <div className={styles.main}>
         <div className={styles.firstRow}>
-          <img
-            className={styles.backIcon}
-            src="back.png"
-            alt=""
-            onClick={handleBack}
-          ></img>
+          <BackIcon></BackIcon>
 
           <div
             className={styles.myCoinsButton}
