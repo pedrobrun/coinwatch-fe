@@ -1,18 +1,25 @@
 import { ethers } from 'ethers';
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
-import { JwtCookieContext } from '../contexts/JwtCookieContext';
+import {
+  IJwtCookieContext,
+  JwtCookieContext,
+} from '../contexts/JwtCookieContext';
 
 export default function CookiesProvider({ children }: any) {
-  const [jwtToken, setJwtToken] = useState<string | undefined>(undefined);
+  const [user, setUser] = useState<IJwtCookieContext | undefined>(undefined);
 
   useEffect(() => {
     const jwt = Cookies.get('jwt');
-    setJwtToken(jwt);
+    const username = Cookies.get('username');
+
+    if (jwt && username) {
+      setUser({ jwt, username });
+    }
   }, [children]);
 
   return (
-    <JwtCookieContext.Provider value={jwtToken}>
+    <JwtCookieContext.Provider value={user}>
       {children}
     </JwtCookieContext.Provider>
   );

@@ -3,7 +3,9 @@ import { InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
+import JwtCookieProvider from '../providers/JwtCookieProvider';
 import styles from '../styles/Coins.module.scss';
+import useJwtCookie from '../useContext/useJwtCookie';
 
 function Coins({
   coins,
@@ -14,17 +16,18 @@ function Coins({
     router.back();
   };
 
+  const user = useJwtCookie();
+
   const addCoinToFavourites = async (coin: any) => {
     const addedCoin = await axios.post(
       'http://localhost:3000/coin',
       {
         coin,
-        username: 'First_username',
+        username: user?.username,
       },
       {
         headers: {
-          authorization:
-            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkZpcnN0X3VzZXJuYW1lIiwiZW5jb2RlZFBhc3N3b3JkIjoiJDJiJDEyJGlTajhkbWZLb2ZSWWQxY05UUUx6cnVRNmMuWnR2MGwwNDB5Rk5sNjdNMWFzYUVuMFJRVU1HIiwiaWF0IjoxNjUzMzQyMTY2LCJleHAiOjE2NTMzNDM5NjZ9.7ms3TMgjhRIQ5lJyLWzYpLfoPpSYwFi4lLQaWOpIZXk',
+          authorization: `Bearer ${user?.jwt}`,
         },
       }
     );
@@ -57,7 +60,7 @@ function Coins({
   };
 
   return (
-    <>
+    <JwtCookieProvider>
       <div className={styles.main}>
         <img
           className={styles.backIcon}
@@ -88,13 +91,17 @@ function Coins({
 
                   <img className={styles.coinLogo} src={c.logo_url}></img>
 
-                  <img
-                    className={styles.addIcon}
-                    src="add-icon.webp"
-                    onClick={() => {
-                      addCoinToFavourites(c);
-                    }}
-                  ></img>
+                  {user?.jwt && user.username ? (
+                    <img
+                      className={styles.addIcon}
+                      src="add-icon.webp"
+                      onClick={() => {
+                        addCoinToFavourites(c);
+                      }}
+                    ></img>
+                  ) : (
+                    <div>Login to favourite coins</div>
+                  )}
                 </li>
               </ul>
             );
@@ -103,7 +110,7 @@ function Coins({
           <div>No coins found</div>
         )}
       </div>
-    </>
+    </JwtCookieProvider>
   );
 }
 
