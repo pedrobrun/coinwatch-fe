@@ -41,3 +41,9 @@
 .main {
   padding: 1rem;
 }
+
+.priceCol {
+  @media (max-width: 500px) {
+    display: none;
+  }
+}

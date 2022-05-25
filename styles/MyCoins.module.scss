@@ -35,12 +35,20 @@
   }
 }
 
+.coinName {
+  @media (max-width: 500px) {
+    display: none;
+  };
+}
+
 .moreDetails {
-  display: grid;
-  padding-top: 2rem;
-  grid-template-columns: 1fr 1fr;
   div {
     padding-bottom: 0.5rem;
+  }
+  @media (min-width: 600px) {
+    display: grid;
+    padding-top: 2rem;
+    grid-template-columns: 1fr 1fr;
   }
 }
 

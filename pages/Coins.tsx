@@ -84,14 +84,17 @@ function Coins({
                     <p>{c.symbol}</p>
                   </div>
 
-                  <div>
+                  <div className={styles.priceCol}>
                     <p>Name</p>
                     <p>{c.name}</p>
                   </div>
 
                   <div>
                     <p>Price</p>
-                    <p>{c.price}</p>
+                    <p>
+                      ${c.price.split('.')[0]}.
+                      {c.price.split('.')[1].substring(0, 3)}
+                    </p>
                   </div>
 
                   <img className={styles.coinLogo} src={c.logo_url}></img>

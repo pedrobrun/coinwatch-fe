@@ -47,8 +47,11 @@ export default function MyCoins() {
               <div key={c.id} className={styles.coinContainer}>
                 <ul className={styles.coinCard}>
                   <li>{c.currency}</li>
-                  <li>{c.name}</li>
-                  <li>${c.price}</li>
+                  <li className={styles.coinName}>{c.name}</li>
+                  <li>
+                    ${c.price.split('.')[0]}.
+                    {c.price.split('.')[1].substring(0, 3)}
+                  </li>
                   <img src={c.logo_url} className={styles.logo}></img>
                 </ul>
                 {clicked === index && (
