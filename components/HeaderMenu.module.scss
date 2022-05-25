@@ -1,0 +1,30 @@
+.optionsMenu{
+  all: unset;
+  margin: 1rem;
+  justify-content: space-between;
+  display: flex;
+}
+
+.li {
+  list-style-type: none;
+  :hover {
+    font-weight: bold;
+  }
+}
+
+.options {
+  min-width: max-content;
+  justify-content: space-between;
+  display: flex;
+  .li {
+    padding-left: 2rem;
+  }
+}
+
+.divider {
+  margin-top: 1.5rem;
+}
+
+.username {
+  font-weight: bold;
+}
