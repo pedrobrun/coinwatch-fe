@@ -1,4 +1,3 @@
-import { ethers } from 'ethers';
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react';
 import {
