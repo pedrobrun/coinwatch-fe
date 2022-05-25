@@ -13,10 +13,6 @@ function Coins({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const router = useRouter();
 
-  const handleBack = () => {
-    router.back();
-  };
-
   const user = useJwtCookie();
 
   const addCoinToFavourites = async (coin: any) => {
@@ -72,7 +68,7 @@ function Coins({
               router.push('MyCoins');
             }}
           >
-            My Coins
+            See Favourite Coins
           </div>
         </div>
 
