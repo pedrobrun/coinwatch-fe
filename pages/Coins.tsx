@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { toast } from 'react-toastify';
 import BackIcon from '../components/BackIcon';
+import { HeaderMenu } from '../components/HeaderMenu';
 import JwtCookieProvider from '../providers/JwtCookieProvider';
 import styles from '../styles/Coins.module.scss';
 import useJwtCookie from '../useContext/useJwtCookie';
@@ -58,6 +59,7 @@ function Coins({
 
   return (
     <JwtCookieProvider>
+      <HeaderMenu></HeaderMenu>
       <div className={styles.main}>
         <div className={styles.firstRow}>
           <BackIcon></BackIcon>

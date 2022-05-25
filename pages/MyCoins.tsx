@@ -5,6 +5,7 @@ import ProtectedRoute from '../components/ProtectedRoute';
 import JwtCookieProvider from '../providers/JwtCookieProvider';
 import useJwtCookie from '../useContext/useJwtCookie';
 import styles from '../styles/MyCoins.module.scss';
+import { HeaderMenu } from '../components/HeaderMenu';
 
 export default function MyCoins() {
   const [myCoins, setMyCoins] = useState<any>();
@@ -36,6 +37,7 @@ export default function MyCoins() {
 
   return (
     <JwtCookieProvider>
+      <HeaderMenu></HeaderMenu>
       <ProtectedRoute>
         <div className={styles.wrapper}>
           <BackIcon></BackIcon>

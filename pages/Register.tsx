@@ -2,6 +2,7 @@ import axios from 'axios';
 import Router from 'next/router';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { HeaderMenu } from '../components/HeaderMenu';
 import styles from '../styles/Register.module.scss';
 
 function Register() {
@@ -53,26 +54,33 @@ function Register() {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.title}>Sign Up</div>
-      <form onSubmit={handleSubmit} className={styles.formBox}>
-        <label className={styles.label}>
-          Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </label>
+    <>
+      <HeaderMenu></HeaderMenu>
+      <div className={styles.wrapper}>
+        <div className={styles.title}>Sign Up</div>
+        <form onSubmit={handleSubmit} className={styles.formBox}>
+          <label className={styles.label}>
+            Username:
+            <input
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </label>
 
-        <label className={styles.label}>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            className={styles.psswrdInput}
-          />
-        </label>
-        <input type="submit" value="Sign Up" className={styles.sendButton} />
-      </form>
-    </div>
+          <label className={styles.label}>
+            Password:
+            <input
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              className={styles.psswrdInput}
+            />
+          </label>
+          <input type="submit" value="Sign Up" className={styles.sendButton} />
+        </form>
+      </div>
+    </>
   );
 }
 

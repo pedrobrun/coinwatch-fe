@@ -4,6 +4,8 @@ import useJwtCookie from '../useContext/useJwtCookie';
 import styles from './HeaderMenu.module.scss';
 
 export function HeaderMenu() {
+  const user = useJwtCookie();
+
   return (
     <>
       {
@@ -12,12 +14,20 @@ export function HeaderMenu() {
             <Link href={'/'}>Home</Link>
           </li>
           <div className={styles.options}>
-            <li className={styles.li}>
-              <Link href={'Register'}>Sign Up</Link>
-            </li>
-            <li className={styles.li}>
-              <Link href={'Login'}>Sign In</Link>
-            </li>
+            {!user ? (
+              <>
+                <li className={styles.li}>
+                  <Link href={'Register'}>Sign Up</Link>
+                </li>
+                <li className={styles.li}>
+                  <Link href={'Login'}>Sign In</Link>
+                </li>
+              </>
+            ) : (
+              <div>
+                Hello, <span className={styles.username}>{user.username}</span>
+              </div>
+            )}
           </div>
         </ul>
       }
