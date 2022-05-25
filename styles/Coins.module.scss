@@ -23,6 +23,9 @@
 .myCoinsButton {
   font-size: 1.5rem;
   cursor: pointer;
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .addIcon {
