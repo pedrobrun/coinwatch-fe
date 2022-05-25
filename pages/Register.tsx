@@ -70,7 +70,7 @@ function Register() {
             className={styles.psswrdInput}
           />
         </label>
-        <input type="submit" value="Sign up" className={styles.sendButton} />
+        <input type="submit" value="Sign Up" className={styles.sendButton} />
       </form>
     </div>
   );

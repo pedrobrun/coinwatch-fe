@@ -64,14 +64,14 @@ function Login() {
           draggable: true,
           progress: undefined,
         });
-        Router.push('MyCoins');
+        Router.push('Coins');
         break;
     }
   };
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.title}>Sign in</div>
+      <div className={styles.title}>Sign In</div>
       <form onSubmit={handleSubmit} className={styles.formBox}>
         <label className={styles.label}>
           Username:
@@ -86,7 +86,7 @@ function Login() {
             onChange={handlePasswordChange}
           />
         </label>
-        <input type="submit" value="Sign in" className={styles.sendButton} />
+        <input type="submit" value="Sign In" className={styles.sendButton} />
       </form>
     </div>
   );
