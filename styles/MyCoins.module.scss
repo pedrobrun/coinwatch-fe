@@ -1,0 +1,57 @@
+.wrapper {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.coinContainer{
+  border: solid;
+  border-width: 0.1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.coinCard {
+  all: unset;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  li {
+    font-size: 1.3rem;
+  }
+}
+
+.logo {
+  height: 3rem;
+}
+
+.moreBttn {
+  color: blue;
+  cursor: pointer;
+  width: min-content;
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.moreDetails {
+  display: grid;
+  padding-top: 2rem;
+  grid-template-columns: 1fr 1fr;
+  div {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.rightColumnItem {
+  justify-self: flex-end;
+}
+
+.negative {
+  color: red;
+}
+
+.positive {
+  color: green;
+}
