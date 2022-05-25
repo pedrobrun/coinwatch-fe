@@ -5,6 +5,7 @@ import MetaMaskProvider from '../providers/MetaMaskProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import JwtCookieProvider from '../providers/JwtCookieProvider';
+import { HeaderMenu } from '../components/HeaderMenu';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,8 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Coinwatch</title>
       </Head>
       <ToastContainer></ToastContainer>
+
       <MetaMaskProvider>
         <JwtCookieProvider>
+          <HeaderMenu></HeaderMenu>
           <Component {...pageProps} />
         </JwtCookieProvider>
       </MetaMaskProvider>
